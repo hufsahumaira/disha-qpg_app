@@ -1,0 +1,20 @@
+<% provide(:title, 'Show Question') %>
+<div class="row">
+  <aside class="col-md-8">
+    <section class="question_info">
+      <p>Question : <%= @addquestion.question %></p>
+      <p>Difficulty : <%= @addquestion.difficulty %></p>
+      <p>Mark : <%= @addquestion.mark %></p>
+      <p>Course : <%= @addquestion.course %></p>
+    </section>
+    <section class="todo">
+      <p>
+        <%= link_to " Edit ", edit_add_question_path(@addquestion) %>
+      </p>
+      <p>
+        <%= link_to " Delete ", @addquestion, method: :delete, data: { confirm: "You sure? "} %>
+      </p>
+    </section>
+  </aside>
+  <%= render 'shared/link' %>
+</div>

@@ -1,0 +1,18 @@
+<% provide(:title, 'All Questions') %>
+
+<h1>All Questions</h1>
+
+<%= will_paginate %>
+
+<ul class="index">
+  <% @add_questions.each do |addquestion| %>
+    <li>
+      <%= link_to addquestion.question, addquestion %>
+      | <%= link_to " Edit ", edit_add_question_path(addquestion) %>
+      | <%= link_to " Delete ", addquestion, method: :delete, data: { confirm: "You sure? "} %>
+    </li>
+
+  <% end %>
+</ul>
+
+<%= will_paginate %>

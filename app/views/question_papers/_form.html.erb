@@ -1,0 +1,21 @@
+<%= form_for(@question_paper) do |f| %>
+  <%= render 'shared/ques_paper_errors', object: @question_paper %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :code %>
+  <%= f.text_field :code, class: 'form-control' %>
+
+  <%= f.label :fullmark %>
+  <%= f.select :fullmark, [25, 40], class: 'form-control' %>
+
+  <%= f.label :paper_difficulty %>
+  <%= f.select :paper_difficulty,['easy','medium','hard'], class: 'form-control' %>
+
+  <%= f.label :module %>
+  <%= f.number_field :module, class: 'form-control' %>
+
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

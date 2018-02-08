@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+    <section class="paper_head">
+      <h2>Daffodil International University</h2>
+      <p>Course Name: <%= @question_paper.name %></p>
+      <p>Course Code: <%= @question_paper.code %></p>
+      <p>Full Marks:  <%= @question_paper.fullmark %></p>
+    </section>
+
+    <section class="paper_body">
+      <% if @fullmark==25 %>
+        <% if @module==2 %>
+          <%= render 'pdf_formats/mod2_25' %>
+        <% elsif @module==3 %>
+          <%= render 'pdf_formats/mod3_25' %>
+        <% elsif @module==4 %>
+          <%= render 'pdf_formats/mod4_25' %>
+        <% elsif @module==5 %>
+          <%= render 'pdf_formats/mod5_25' %>
+        <% end %>
+      <% elsif @fullmark==40 %>
+        <% if @module==3 %>
+          <%= render 'pdf_formats/mod3_40' %>
+        <% elsif @module==4 %>
+          <%= render 'pdf_formats/mod4_40' %>
+        <% elsif @module==5%>
+          <%= render 'pdf_formats/mod5_40' %>
+        <% end %>
+      <% end %>
+
+    </section>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="center jumbotron">
+  <h1>Welcome to the Question Paper Generator System</h1>
+  <h2>This is the home page for the Question Paper Generator System App.</h2>
+
+  <% if logged_in? %>
+    <h3>Quick Links</h3>
+    <div class="btn-group-vertical">
+      <%= link_to "Insert Question", insert_path, class: "btn btn-primary" %>
+      <%= link_to "All Questions", add_questions_path, class: "btn btn-primary" %>
+      <%= link_to "Create Question Paper", paper_path, class: "btn btn-primary" %>
+    </div>
+  <% else %>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
+</div>
+<%= link_to image_tag("ques.png", alt: "Question logo") %>

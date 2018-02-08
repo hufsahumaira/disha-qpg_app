@@ -1,0 +1,17 @@
+<%= form_for(@addquestion) do |f| %>
+  <%= render 'shared/ques_error_messages', object: @addquestion %>
+
+  <%= f.label :question %>
+  <%= f.text_area :question, class: 'form-control' %>
+
+  <%= f.label :difficulty %>
+  <%= f.select :difficulty, ['easy', 'medium', 'hard'], class: 'form-control' %>
+
+  <%= f.label :mark %>
+  <%= f.number_field :mark, step: :any, class: 'form-control' %>
+
+  <%= f.label :course %>
+  <%= f.text_field :course, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
